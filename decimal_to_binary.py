@@ -3,28 +3,52 @@ import os,sys
 # Function to convert decimal to binary number
 def decimalToBinary(decimal):  
     return format(decimal , '08b')
-decimal1 = int(input('Please insert A: '))
-decimal2 = int(input('Please insert B: '))
-decimal3 = int(input('Please insert C: '))
+num = int(input('2 decimal or 3 decimal ?'))
 
-A = decimalToBinary(decimal1)
-B = decimalToBinary(decimal2)
-C = decimalToBinary(decimal3)
-print('A binary is:', A)
-print('B binary is:', B)
-print('C binary is:', C)
+if num == 3:
+	decimal1 = int(input('Please insert Prefix_A: '))
+	decimal2 = int(input('Please insert Prefix_B: '))
+	decimal3 = int(input('Please insert Prefix_C: '))
 
-binary_num = list(A + B + C)
-value = 0
+	A = decimalToBinary(decimal1)
+	B = decimalToBinary(decimal2)
+	C = decimalToBinary(decimal3)
+	print('Prefix_A binary is:', A)
+	print('Prefix_B binary is:', B)
+	print('Prefix_C binary is:', C)
 
-for i in range(len(binary_num)):
-	decimal = binary_num.pop()
-	if decimal == '1':
-		value = value + pow(2, i)
-print("The decimal value of the number is", value)
+	binary_num = list(A + B + C)
+	value = 0
+
+	for i in range(len(binary_num)):
+		decimal = binary_num.pop()
+		if decimal == '1':
+			value = value + pow(2, i)
+	print("The decimal value of the number is", value)
+
+elif num == 2:
+	decimal2 = int(input('Please insert Prefix_B: '))
+	decimal3 = int(input('Please insert Prefix_C: '))
+
+	B = decimalToBinary(decimal2)
+	C = decimalToBinary(decimal3)
+	print('Prefix_B binary is:', B)
+	print('Prefix_C binary is:', C)
+
+	binary_num = list(B + C)
+	value = 0
+
+	for i in range(len(binary_num)):
+		decimal = binary_num.pop()
+		if decimal == '1':
+			value = value + pow(2, i)
+	print("The decimal value of the number is", value)
+else:
+	print('You can only choose either 2 or 3')
 
 
-Binary to Decimal
+
+#Binary to Decimal
 # b_num = list(input("Input a binary number: "))
 # value = 0
 
